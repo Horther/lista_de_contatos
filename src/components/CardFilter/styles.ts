@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
 type Props = {
-  ativo: boolean
+  $ativo: boolean
 }
 
 export const Filter = styled.div<Props>`
   background-color: ${(props) =>
-    props.ativo ? variaveis.branco : variaveis.verdeClaro};
+    props.$ativo ? variaveis.branco : variaveis.verdeClaro};
   border-radius: 2rem 0 0 2rem;
   display: flex;
   gap: 0.5rem;

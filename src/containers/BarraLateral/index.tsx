@@ -41,35 +41,35 @@ const BarraLateral = ({ showFilters }: Props) => {
             <BtnAdd />
 
             <CardFilter
-              ativo={category === 'all'}
+              $ativo={category === 'all'}
               counter={contactList('all')}
               title="Contacts"
               icon="icons/contatos.png"
               onClick={() => filterHandler('all')}
             />
             <CardFilter
-              ativo={category === 'family'}
+              $ativo={category === 'family'}
               counter={contactList('family')}
               title="Family"
               icon="icons/familia.png"
               onClick={() => filterHandler('family')}
             />
             <CardFilter
-              ativo={category === 'friend'}
+              $ativo={category === 'friend'}
               counter={contactList('friend')}
               title="Friends"
               icon="icons/amigos.png"
               onClick={() => filterHandler('friend')}
             />
             <CardFilter
-              ativo={category === 'work'}
+              $ativo={category === 'work'}
               counter={contactList('work')}
               title="Work"
               icon="icons/escritorio.png"
               onClick={() => filterHandler('work')}
             />
             <CardFilter
-              ativo={category === 'favorite'}
+              $ativo={category === 'favorite'}
               counter={contactList('favorite')}
               title="Favorite"
               icon="icons/estrela-fill.png"

@@ -73,7 +73,7 @@ export const InputStyle = styled.input`
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  background-color: ${variaveis.vermelho};
+  background-color: ${variaveis.branco};
   padding: 0.25rem 0.5rem;
 
   &:focus {

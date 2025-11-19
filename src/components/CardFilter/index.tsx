@@ -1,17 +1,17 @@
 import * as S from './styles'
 
 type Props = {
-  ativo: boolean
+  $ativo: boolean
   title: string
   counter: number
   icon: string
   onClick: () => void
 }
 
-const CardFilter = ({ ativo, title, counter, icon, onClick }: Props) => {
+const CardFilter = ({ $ativo, title, counter, icon, onClick }: Props) => {
   return (
     <>
-      <S.Filter ativo={ativo} onClick={onClick}>
+      <S.Filter $ativo={$ativo} onClick={onClick}>
         <S.Icon>
           <img src={icon} alt={title} />
         </S.Icon>
