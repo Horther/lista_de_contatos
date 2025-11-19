@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-export const Filter = styled.div.withConfig({
-  shouldForwardProp: (prop) => prop !== 'ativo'
-})<{ ativo: boolean }>`
-  background-color: ${(ativo) =>
-    ativo ? variaveis.verdeClaro : variaveis.vermelho};
+type Props = {
+  ativo: boolean
+}
+
+export const Filter = styled.div<Props>`
+  background-color: ${(props) =>
+    props.ativo ? variaveis.branco : variaveis.verdeClaro};
   border-radius: 2rem 0 0 2rem;
   display: flex;
   gap: 0.5rem;
@@ -25,7 +27,7 @@ export const Filter = styled.div.withConfig({
     transition: background-color 0.3s ease;
   }
   &:hover::after {
-    background-color: ${variaveis.verde};
+    background-color: ${variaveis.cinzaClaro};
     opacity: 0.5;
   }
 
