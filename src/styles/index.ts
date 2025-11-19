@@ -31,7 +31,7 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   z-index: 1;
-  background-color: ${variaveis.cinzaClaro};
+  background-color: ${variaveis.branco};
   h4 {
     margin-left: 1rem;
   }
@@ -73,7 +73,7 @@ export const InputStyle = styled.input`
   display: block;
   width: 100%;
   margin-bottom: 1rem;
-  background-color: transparent;
+  background-color: ${variaveis.vermelho};
   padding: 0.25rem 0.5rem;
 
   &:focus {
