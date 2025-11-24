@@ -1,38 +1,12 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import Contact from '../../models/Contact'
-import * as enums from '../../utils/enums/Contacts'
 import { loadContacts } from '../../utils/storage/loadContacts'
 
 type ContactState = {
   itens: Contact[]
 }
 
-const cContact: Contact[] = [
-  {
-    name: 'Felipe',
-    email: 'felipe@email.com',
-    category: enums.Category.FAMILY,
-    pNumber: 123123123123,
-    favorite: false,
-    id: 1
-  },
-  {
-    name: 'Kleber',
-    email: 'Kleber@email.com',
-    category: enums.Category.FRIEND,
-    pNumber: 123123123123,
-    favorite: false,
-    id: 2
-  },
-  {
-    name: 'Sam',
-    email: 'Sam@email.com',
-    category: enums.Category.WORK,
-    pNumber: 123123123123,
-    favorite: true,
-    id: 3
-  }
-]
+const cContact: Contact[] = []
 
 // const savedContacts = showContacts()
 
