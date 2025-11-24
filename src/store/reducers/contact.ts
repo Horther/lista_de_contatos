@@ -1,6 +1,7 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import Contact from '../../models/Contact'
 import * as enums from '../../utils/enums/Contacts'
+import { loadContacts } from '../../utils/storage/loadContacts'
 
 type ContactState = {
   itens: Contact[]
@@ -33,23 +34,27 @@ const cContact: Contact[] = [
   }
 ]
 
-function showContacts(): Contact[] {
-  const savedContacts = localStorage.getItem('contatos')
-  if (savedContacts) {
-    try {
-      return JSON.parse(savedContacts)
-    } catch {
-      return []
-    }
-  }
+// const savedContacts = showContacts()
 
-  return []
-}
+// function showContacts(): Contact[] {
+//   const savedContacts = localStorage.getItem('contatos')
+//   if (savedContacts) {
+//     try {
+//       return JSON.parse(savedContacts)
+//     } catch {
+//       return []
+//     }
+//   }
+//   localStorage.clear()
 
-const savedContacts = showContacts()
+//   return []
+// }
 
+// const initialState: ContactState = {
+//   itens: savedContacts.length > 0 ? savedContacts : cContact
+// }
 const initialState: ContactState = {
-  itens: savedContacts.length > 0 ? savedContacts : cContact
+  itens: loadContacts().length > 0 ? loadContacts() : cContact
 }
 
 function saveContacts(contatos: Contact[]) {
@@ -103,13 +108,11 @@ const contactSlice = createSlice({
         alert('Phone number already exists!!')
       } else {
         const lastContact = state.itens[state.itens.length - 1]
-        const newContact = {
+        state.itens.push({
           ...action.payload,
           id: lastContact ? lastContact.id + 1 : 1,
           favorite: false
-        }
-        state.itens.push(newContact)
-        saveContacts(state.itens)
+        })
       }
     }
   }
